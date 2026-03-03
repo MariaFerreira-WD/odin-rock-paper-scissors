@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <script>
+    // Randomly return one of the following string values: “rock”, “paper” or “scissors”
+    function getComputerChoice() {
+      const choice = ["rock", "paper", "scissor"];
+      const randomIndex = Math.floor(Math.random() * choice.length);
+      const randomChoice = choice[randomIndex];
+      return randomChoice;
+      console.log(randomChoice);
+    }
+
+    // Takes the user choice and returns it
+    function getHumanChoice() {
+      const choice = prompt("Rock, paper or scissors?").toLowerCase();
+      return choice;
+    }
+
+    // Scores
+    let humanScore = 0;
+    let computerScore = 0;
+  </script>
+  <body></body>
+</html>
