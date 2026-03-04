@@ -4,81 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <script src="script.js" defer></script>
   </head>
-  <script>
-    // Randomly return one of the following string values: “rock”, “paper” or “scissors”
-    function getComputerChoice() {
-      const choice = Math.floor(Math.random() * 3);
-
-      switch (choice) {
-        case 0:
-          return "rock";
-
-        case 1:
-          return "paper";
-
-        case 2:
-          return "scissors";
-      }
-    }
-
-    // Takes the user choice and returns it
-    function getHumanChoice() {
-      const choice = prompt("Rock, paper or scissors?").toLowerCase();
-      return choice;
-    }
-
-    // Scores
-    let humanScore = 0;
-    let computerScore = 0;
-
-    // Takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement
-    function playRound() {
-      const humanChoice = getHumanChoice();
-      const computerChoice = getComputerChoice();
-      if (humanChoice === "rock") {
-        if (computerChoice === "rock") {
-          console.log("It's a draw");
-        } else if (computerChoice === "paper") {
-          console.log("You Lose!");
-          ++computerScore;
-        } else {
-          console.log("You win!");
-          ++humanScore;
-        }
-      } else if (humanChoice === "paper") {
-        if (computerChoice === "rock") {
-          console.log("You win!");
-          ++humanScore;
-        } else if (computerChoice === "paper") {
-          console.log("It's a draw!");
-        } else {
-          console.log("You lose!");
-          ++computerScore;
-        }
-      } else {
-        if (computerChoice === "rock") {
-          console.log("You lose!");
-          ++computerScore;
-        } else if (computerChoice === "paper") {
-          console.log("You win!");
-          ++humanScore;
-        } else {
-          console.log("It's a draw!");
-        }
-      }
-    }
-
-    //  Play 5 rounds, keeps track of the scores and declares a winner at the end
-    function playGame() {
-      playRound();
-      playRound();
-      playRound();
-      playRound();
-      playRound();
-    }
-
-    playGame();
-  </script>
-  <body></body>
+  <body>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    <div class="results">
+      <p>Human:</p>
+      <p id="human"></p>
+      <p>Computer:</p>
+      <p id="computer"></p>
+      <p id="winner"></p>
+    </div>
+  </body>
 </html>
